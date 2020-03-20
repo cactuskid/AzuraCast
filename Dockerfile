@@ -56,7 +56,7 @@ ENV VIRTUAL_HOST="azuracast.local" \
 
 # Sensible default environment variables.
 ENV APPLICATION_ENV="production" \
-    MYSQL_HOST="mariadb" \
+    MYSQL_HOST="mysql" \
     MYSQL_PORT=3306 \
     MYSQL_USER="azuracast" \
     MYSQL_PASSWORD="azur4c457" \
@@ -67,7 +67,7 @@ ENV APPLICATION_ENV="production" \
 
 # Entrypoint and default command
 ENTRYPOINT ["dockerize",\
-    "-wait","tcp://mariadb:3306",\
+    "-wait","tcp://mysql:3306",\
     "-wait","tcp://influxdb:8086",\
     "-timeout","40s"]
 CMD ["/usr/local/bin/my_init"]
