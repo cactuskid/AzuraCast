@@ -67,7 +67,7 @@ ENV APPLICATION_ENV="production" \
 
 # Entrypoint and default command
 ENTRYPOINT ["dockerize",\
-    "-wait","tcp://mysql:3306",\
+    "-wait","tcp://10.40.10.179:3306",\
     "-wait","tcp://influxdb:8086",\
     "-timeout","40s"]
 CMD ["/usr/local/bin/my_init"]
